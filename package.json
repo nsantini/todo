@@ -1,0 +1,26 @@
+{
+  "name": "package",
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "q": "*"
+  },
+  "devDependencies": {
+    "body-parser": "*",
+    "gulp": "^3.8.7",
+    "gulp-bower": "*",
+    "gulp-concat": "*",
+    "gulp-jshint": "*",
+    "gulp-livereload": "*",
+    "gulp-nodemon": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-stylus": "*",
+    "gulp-task-listing": "*",
+    "gulp-uglify": "*",
+    "jshint-stylish": "*",
+    "morgan": "*",
+    "tiny-lr": "*"
+  }
+}

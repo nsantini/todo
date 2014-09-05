@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+  <meta charset='utf8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <title>todoApp</title>
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-css-only/css/bootstrap.css">
+  <link rel="stylesheet" href="styles/css/app.css"/>
+</head>
+  <body>
+
+    <div class="container">
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+                <li class="active"><a ng-href="#">Home</a></li>
+                <li><a ng-href="#">About</a></li>
+                <li><a ng-href="#">Contact</a></li>
+            </ul>
+            <h1 class="text-muted">TODO</h1>
+        </div>
+
+        <div ng-include="'todo/todo.tpl.html'" ng-controller="TodoCtrl"></div>
+
+        <div class="footer">
+            <p><span class="glyphicon glyphicon-heart"></span> from the Santini team</p>
+        </div>
+    </div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="lib/ngFx/dist/ngFx.js"></script>
+    <script src="app.js"></script>
+    <script src="common/directives.js"></script>
+    <script src="todo/service.js"></script>
+    <script src="todo/todo.js"></script>
+  </body>
+</html>
