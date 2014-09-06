@@ -1,12 +1,11 @@
 "use strict";
 
-var controller = require('./todo_controllers.js');
+var controller = require('./lists_controller.js');
 
 module.exports = exports = function (router) {
   router.route('/')
-    .post(controller.post);
-  router.route('/:id')
-      .get(controller.get);
+    .post(controller.post)
+    .get(controller.get);
   router.route('/delete/:id')
     .delete(controller.delete);
 };

@@ -2,19 +2,20 @@
   "use strict";
 
   angular.module('todoApp')
-    .controller('TodoCtrl', ['$scope', 'todoService', function ($scope, todoService) {
+    .controller('TodoCtrl', ['$scope', '$routeParams', 'todoService',
+    function ($scope, $routeParams, todoService) {
 
       $scope.todoList = [];
 
       $scope.newTodo = "";
 
-      todoService.load(function (data) {
+      todoService.load($routeParams.listId, function (data) {
         $scope.todoList = data;
       });
 
       $scope.addTodo = function() {
         if (this.newTodo.length) {
-          var todo = { done: false, text: this.newTodo };
+          var todo = { listId: $routeParams.listId, done: false, text: this.newTodo };
           this.todoList.push(todo);
           this.newTodo = "";
           todoService.save(todo);

@@ -11,28 +11,34 @@
   <body>
 
     <div class="container">
-        <div class="header">
-            <ul class="nav nav-pills pull-right">
-                <li class="active"><a ng-href="#">Home</a></li>
-                <li><a ng-href="#">About</a></li>
-                <li><a ng-href="#">Contact</a></li>
-            </ul>
-            <h1 class="text-muted">TODO</h1>
-        </div>
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a ng-href="#">Home</a></li>
+          <li><a ng-href="#">About</a></li>
+          <li><a ng-href="#">Contact</a></li>
+        </ul>
+        <h1 class="text-muted">TODO</h1>
+      </div>
 
-        <div ng-include="'todo/todo.tpl.html'" ng-controller="TodoCtrl"></div>
+      <div class="jumbotron">
+          <h3>'Allo, 'Allo!</h3>
+          <p class="lead">Wellcome to the super collaborative real time TODO app!</p>
+      </div>
 
-        <div class="footer">
-            <p><span class="glyphicon glyphicon-heart"></span> from the Santini team</p>
-        </div>
+      <div ng-view></div>
+
+      <div class="footer">
+        <p><span class="glyphicon glyphicon-heart"></span> from the Santini team</p>
+      </div>
     </div>
 
     <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="lib/ngFx/dist/ngFx.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="common/directives.js"></script>
     <script src="todo/service.js"></script>
     <script src="todo/todo.js"></script>
+    <script src="lists/lists.js"></script>
+    <script src="lists/service.js"></script>
   </body>
 </html>
