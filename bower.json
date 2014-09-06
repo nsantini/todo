@@ -1,12 +1,12 @@
 {
-  "name": "my-app",
+  "name": "todo-app",
   "version": "0.0.1",
   "dependencies": {
     "bootstrap-css-only": "*",
     "angular": "*" ,
     "angular-cookies": "*",
     "ngFx": "*",
-    "angular-ui-router": "*"
+    "angular-ui-router": "*",
+    "angular-route": "~1.2.x"
   }
 }
-

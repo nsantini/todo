@@ -1,13 +1,14 @@
 "use strict";
 
-var Todo = require('./todo_model.js'),
+var Lists = require('./Lists_model.js'),
     Q    = require('q');
 
 module.exports = exports = {
   get: function (req, res, next) {
-    Todo.findQ({ listId: req.params.id })
-      .then(function (todos) {
-        res.json(todos);
+    var $promise = Q.nbind(Lists.find, Lists);
+    $promise()
+      .then(function (lists) {
+        res.json(lists);
       })
        .fail(function (reason) {
         next(reason);
@@ -15,10 +16,10 @@ module.exports = exports = {
   },
 
   post: function (req, res, next) {
-        var todo = req.body.todo;
-        if (!todo._id) {
-          var $promise = Q.nbind(Todo.create, Todo);
-          $promise(todo)
+        var list = req.body.list;
+        if (!list._id) {
+          var $promise = Q.nbind(Lists.create, Lists);
+          $promise(list)
             .then(function (id) {
               res.send(id);
             })
@@ -26,7 +27,7 @@ module.exports = exports = {
               next(reason);
             });
         } else {
-          Todo.updateQ({_id: todo._id}, todo)
+          Lists.updateQ({_id: list._id}, list)
             .then(function (id) {
               res.send(id);
             })
@@ -37,7 +38,7 @@ module.exports = exports = {
   },
 
   delete: function (req, res, next) {
-    Todo.removeQ({_id: req.params.id})
+    Lists.removeQ({_id: req.params.id})
       .then(function (id) {
         res.send(id);
       })
