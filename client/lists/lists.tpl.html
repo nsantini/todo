@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Your TODO Lists</h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-sm-11">
+      <input ng-model="newList" class="form-control" placeholder="add new list..." ng-enter="addList()"/>
+    </div>
+    <div class="col-sm-1">
+      <a ng-click="addList()" class="btn btn-primary btn-md" role="button">Add</a>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="col-sm-12">
+      <ul class="list-group">
+        <li class="list-group-item"  ng-repeat="list in lists">
+          <div>
+            <a href="/#/lists/{{list._id}}"><span>{{list.name}}</span></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

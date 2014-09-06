@@ -7,11 +7,11 @@
         save: function(todo) {
           $http.post('/todo', { 'todo': todo });
         },
-        load: function(callback) {
-          $http.get('/todo').success(callback);
+        load: function(id, callback) {
+          $http.get('/todo/' + id).success(callback);
         },
         remove: function(todo) {
-          $http.delete('/todo/' + todo._id);
+          $http.delete('/todo/delete/' + todo._id);
         }
       };
     }]);

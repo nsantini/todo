@@ -1,34 +1,30 @@
-<div class="jumbotron">
-    <h3>'Allo, 'Allo!</h3>
-    <p class="lead">Wellcome to the super collaborative real time TODO app!</p>
-</div>
 <div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">Your TODO List</h3>
+  <div class="panel-heading">
+    <h3 class="panel-title">Your TODO List</h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-sm-11">
+      <input ng-model="newTodo" class="form-control" placeholder="add new todo..." ng-enter="addTodo()"/>
     </div>
-    <div class="panel-body">
-        <div class="col-sm-11">
-            <input ng-model="newTodo" class="form-control" placeholder="add new todo..." ng-enter="addTodo()"/>
-	</div>
-	<div class="col-sm-1">
-	    <a ng-click="addTodo()" class="btn btn-primary btn-md" role="button">Add</a>
-        </div>
+    <div class="col-sm-1">
+      <a ng-click="addTodo()" class="btn btn-primary btn-md" role="button">Add</a>
     </div>
-    <div class="panel-body">
-	<div class="col-sm-12">
-	    <ul class="list-group">
-                <li class="list-group-item"  ng-repeat="todo in todoList">
-                    <div ng-class="{hidden: todo.editing}">
-                        <span ng-class="{crossed: todo.done}">{{todo.text}}</span>
-                        <a href="#" ng-click="editTodo($index)"><span class="glyphicon glyphicon-pencil"></span></a>
-                        <a href="#" ng-click="setDone($index)" ng-class="{hidden: todo.done}"><span class="glyphicon glyphicon-ok"></span></a>
-                        <a href="#" ng-click="removeTodo($index)" ng-class="{hidden: !todo.done}"><span class="glyphicon glyphicon-remove"></span></a>
-                    </div>
-                    <div ng-class="{hidden: !todo.editing}">
-                        <input ng-model="newTodo" class="form-control" value="{{todo.text}}" ng-enter="finishEditTodo($index)"/>
-                    </div>
-                </li>
-            </ul>
-	</div>
+  </div>
+  <div class="panel-body">
+    <div class="col-sm-12">
+      <ul class="list-group">
+        <li class="list-group-item"  ng-repeat="todo in todoList">
+          <div ng-class="{hidden: todo.editing}">
+            <span ng-class="{crossed: todo.done}">{{todo.text}}</span>
+            <a href="" ng-click="editTodo($index)"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="" ng-click="setDone($index)" ng-class="{hidden: todo.done}"><span class="glyphicon glyphicon-ok"></span></a>
+            <a href="" ng-click="removeTodo($index)" ng-class="{hidden: !todo.done}"><span class="glyphicon glyphicon-remove"></span></a>
+          </div>
+          <div ng-class="{hidden: !todo.editing}">
+            <input ng-model="newTodo" class="form-control" value="{{todo.text}}" ng-enter="finishEditTodo($index)"/>
+          </div>
+        </li>
+      </ul>
     </div>
+  </div>
 </div>
